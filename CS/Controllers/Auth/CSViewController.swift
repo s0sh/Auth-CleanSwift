@@ -9,12 +9,13 @@ import UIKit
 
 // swiftlint:disable trailing_whitespace
 protocol CSDisplayLogic: AnyObject {
-    func displayUser(_ viewModel: CSModels.FethUser.ViewModel)
+    func displayUser(_ data: CSDataStore)
 }
 
 final class CSViewController: BaseController {
-    private var interactor: CSBusinessLogic?
     private var authBlock = CSAuthorizationBlock()
+    private var interactor: CSBusinessLogic?
+    private var router: CSRouter?
 }
 
 extension CSViewController {
@@ -35,7 +36,6 @@ extension CSViewController {
     
     override func configureViews() {
         super.configureViews()
-        
         authBlock.buttonPressedCallback = { (name, passsword) in
             guard let interactor = self.interactor else { return }
             interactor.fetchUser(CSModels.FethUser.Request(userName: name, userPassword: passsword))
@@ -53,13 +53,20 @@ extension CSViewController {
         interactor.presenter = presenter
         presenter.viewController = self
         
+        router = CSRouter()
+        router?.controller = self
+        
+        let destinationController = CSMainViewController()
+        router?.destinationController = destinationController
+        
         // Указываем ссылку на Interactor для View Controller
         self.interactor = interactor
     }
 }
 
 extension CSViewController: CSDisplayLogic {
-    func displayUser(_ viewModel: CSModels.FethUser.ViewModel) {
-        print("\(viewModel.userEmail) : \(viewModel.userPhone)\n \(viewModel.userAddress)")
+    func displayUser(_ data: CSDataStore) {
+        router?.dataStore = data
+        router?.routeToNext()
     }
 }

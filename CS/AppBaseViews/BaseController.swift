@@ -27,7 +27,6 @@ class BaseController: UIViewController {
     func layoutViews() {}
     func configureViews() {
         view.backgroundColor = .white
-        navigationController?.navigationBar.isHidden = true
     }
     func setupComponents() {}
     func navBarLeftButtonHandler() {

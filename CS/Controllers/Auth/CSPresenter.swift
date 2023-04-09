@@ -25,7 +25,8 @@ final class CSPresenter: CSPresentetionLogic {
                                                     userEmail: response.userEmail,
                                                     userAddress: response.userAddress)
         
+        let dataStore = CSDataStore.init(data: viewModel)
         // Вызываем метод логики отображения у View Controller'a
-        viewController?.displayUser(viewModel)
+        viewController?.displayUser(dataStore)
     }
 }

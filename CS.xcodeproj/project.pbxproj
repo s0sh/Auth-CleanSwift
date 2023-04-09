@@ -28,6 +28,10 @@
 		B54F969829E2743200DC1223 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F969729E2743200DC1223 /* Resources.swift */; };
 		B54F969A29E274C700DC1223 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F969929E274C700DC1223 /* UIColor+Ext.swift */; };
 		B54F969C29E2774C00DC1223 /* CSBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F969B29E2774C00DC1223 /* CSBaseButton.swift */; };
+		B54F96A529E2A20700DC1223 /* CSMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96A429E2A20700DC1223 /* CSMainViewController.swift */; };
+		B54F96A729E2A28000DC1223 /* CSMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96A629E2A28000DC1223 /* CSMainInteractor.swift */; };
+		B54F96A929E2A30700DC1223 /* CSMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96A829E2A30700DC1223 /* CSMainPresenter.swift */; };
+		B54F96AD29E2AB0B00DC1223 /* CSMainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96AC29E2AB0B00DC1223 /* CSMainRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		B54F969729E2743200DC1223 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		B54F969929E274C700DC1223 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		B54F969B29E2774C00DC1223 /* CSBaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSBaseButton.swift; sourceTree = "<group>"; };
+		B54F96A429E2A20700DC1223 /* CSMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSMainViewController.swift; sourceTree = "<group>"; };
+		B54F96A629E2A28000DC1223 /* CSMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSMainInteractor.swift; sourceTree = "<group>"; };
+		B54F96A829E2A30700DC1223 /* CSMainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSMainPresenter.swift; sourceTree = "<group>"; };
+		B54F96AC29E2AB0B00DC1223 /* CSMainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSMainRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,9 +179,21 @@
 		B54F96A129E27C1300DC1223 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B54F96A329E2A1E900DC1223 /* Main */,
 				B54F967C29E17B3700DC1223 /* Auth */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B54F96A329E2A1E900DC1223 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B54F96A429E2A20700DC1223 /* CSMainViewController.swift */,
+				B54F96A629E2A28000DC1223 /* CSMainInteractor.swift */,
+				B54F96A829E2A30700DC1223 /* CSMainPresenter.swift */,
+				B54F96AC29E2AB0B00DC1223 /* CSMainRouter.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,10 +295,14 @@
 				B54F969C29E2774C00DC1223 /* CSBaseButton.swift in Sources */,
 				B54F969229E271E800DC1223 /* CSAuthorizationBlock.swift in Sources */,
 				B54F969829E2743200DC1223 /* Resources.swift in Sources */,
+				B54F96A929E2A30700DC1223 /* CSMainPresenter.swift in Sources */,
+				B54F96A729E2A28000DC1223 /* CSMainInteractor.swift in Sources */,
+				B54F96AD29E2AB0B00DC1223 /* CSMainRouter.swift in Sources */,
 				B54F969A29E274C700DC1223 /* UIColor+Ext.swift in Sources */,
 				B54F968029E1806F00DC1223 /* CSInteractor.swift in Sources */,
 				B54F968D29E191DE00DC1223 /* CSDataStore.swift in Sources */,
 				B54F967E29E17B5300DC1223 /* BaseController.swift in Sources */,
+				B54F96A529E2A20700DC1223 /* CSMainViewController.swift in Sources */,
 				B54F968429E180F800DC1223 /* CSRouter.swift in Sources */,
 				B54F968229E1807E00DC1223 /* CSPresenter.swift in Sources */,
 				B54F968F29E26E3300DC1223 /* UIView+Ext.swift in Sources */,

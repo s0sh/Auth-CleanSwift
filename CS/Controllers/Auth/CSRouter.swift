@@ -17,19 +17,22 @@ final class CSRouter: CSRoutingLogic, CSDataPassingProtocol {
     var dataStore: CSDataStore?
     
     weak var controller: CSViewController?
+    var destinationController: CSMainViewController?
     
     func routeToNext() {
-        guard var dataStore = self.dataStore else {
-            fatalError("no data to present")
-        }
-        passData(dataStore, destination: &dataStore)
+        guard let data = dataStore, var destination = destinationController else { return }
+        
+        passData(data, destinationController: &destination)
+        
+        guard let viewController = controller else { return }
+        navigateTo(viewController, destination: destination)
     }
     
-    private func navigateTo(_ source: CSViewController, destination: UIViewController) {
+    private func navigateTo(_ source: CSViewController, destination: CSMainViewController) {
         source.navigationController?.pushViewController(destination, animated: true)
     }
     
-    private func passData(_ source: CSDataStore, destination: inout CSDataStore) {
-        destination.message = source.message
+    private func passData(_ source: CSDataStore, destinationController: inout CSMainViewController) {
+        destinationController.router.dataStore = CSDataStore(data: source.data)
     }
 }
