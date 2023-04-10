@@ -15,7 +15,7 @@ protocol CSDisplayLogic: AnyObject {
 final class CSViewController: BaseController {
     private var authBlock = CSAuthorizationBlock()
     private var interactor: CSBusinessLogic?
-    private var router: CSRouter?
+    private var router: CSRoutingLogic?
 }
 
 extension CSViewController {

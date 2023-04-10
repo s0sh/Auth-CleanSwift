@@ -10,6 +10,9 @@ import UIKit
 // swiftlint:disable trailing_whitespace
 protocol CSRoutingLogic {
     func routeToNext()
+    var dataStore: CSDataStore? { get set }
+    var controller: CSViewController? { get set }
+    var destinationController: CSMainViewController? { get set }
 }
 
 final class CSRouter: CSRoutingLogic, CSDataPassingProtocol {
