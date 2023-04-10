@@ -23,7 +23,7 @@ final class CSMainViewController: BaseController {
         return label
     }()
     
-    var interactor: CSMainInteractor?
+    var interactor: CSMainBusinessLogic?
     var router: CSMainRoutingLogic?
 }
 
@@ -45,7 +45,7 @@ extension CSMainViewController {
     
     override func configureViews() {
         super.configureViews()
-        /// for exampple
+        /// dataStore - данные, переданные из другого контроллера (Не MVP цикл)
         messageLabel.text = router?.dataStore?.data?.userAddress
     }
     
