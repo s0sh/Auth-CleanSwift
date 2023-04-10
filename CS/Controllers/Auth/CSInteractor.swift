@@ -9,7 +9,7 @@ import Foundation
 
 // swiftlint:disable trailing_whitespace
 protocol CSBusinessLogic {
-    func fetchUser(_ request: CSModels.FethUser.Request)
+    func fetchUser(_ request: CSModels.UserAuth.Request)
 }
 
 final class CSInteractor: CSBusinessLogic {
@@ -18,7 +18,7 @@ final class CSInteractor: CSBusinessLogic {
     
     private let worker = CSWorkers.networkWorker
     
-    func fetchUser(_ request: CSModels.FethUser.Request) {
+    func fetchUser(_ request: CSModels.UserAuth.Request) {
         
         worker.sendRequest(to: URL(string: "http://google.com")!,
                            parameters: request) { response, error in

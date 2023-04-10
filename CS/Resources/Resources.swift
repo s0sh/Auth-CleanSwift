@@ -43,13 +43,7 @@ enum Resources {
     enum Icons {
         static let eye = UIImage(named: "eye")
         static let eyeBig = UIImage(named: "eye_big")
-        static let identity = UIImage(named: "identity-card")
-        static let user = UIImage(named: "user")
-        static let email = UIImage(named: "email")
-        
         enum Buttons {
-            static let creditCard = UIImage(named: "credit-card")
-            static let growth = UIImage(named: "growth")
             static let send = UIImage(named: "send")
         }
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct CSDataStore {
-    var data: CSModels.FethUser.ViewModel?
+    var data: CSModels.UserAuth.ViewModel?
 }
 
 protocol CSDataPassingProtocol {

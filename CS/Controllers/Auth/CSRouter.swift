@@ -17,6 +17,7 @@ final class CSRouter: CSRoutingLogic, CSDataPassingProtocol {
     var dataStore: CSDataStore?
     
     weak var controller: CSViewController?
+    
     var destinationController: CSMainViewController?
     
     func routeToNext() {

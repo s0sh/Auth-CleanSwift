@@ -8,15 +8,15 @@
 import UIKit
 
 // swiftlint:disable trailing_whitespace
-protocol SBTextFieldDelegate: AnyObject {
+protocol CSTextFieldDelegate: AnyObject {
     func deactivateAll(except tag: Int)
 }
 
-final class SBTextField: BaseView {
+final class CSTextField: BaseView {
     
     public var text: String = ""
     
-    weak var delegate: SBTextFieldDelegate?
+    weak var delegate: CSTextFieldDelegate?
     
     private var isActive: Bool = true
     private var isPassword: Bool = false
@@ -52,7 +52,7 @@ final class SBTextField: BaseView {
     }
 }
 
-extension SBTextField {
+extension CSTextField {
     override func addViews() {
         super.addViews()
         addView(textField)
@@ -104,7 +104,7 @@ extension SBTextField {
     }
 }
 
-extension SBTextField: UITextFieldDelegate {
+extension CSTextField: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         text = textField.text ?? ""
         textField.resignFirstResponder()

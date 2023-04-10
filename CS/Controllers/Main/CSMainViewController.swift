@@ -45,6 +45,7 @@ extension CSMainViewController {
     
     override func configureViews() {
         super.configureViews()
+        /// for exampple
         messageLabel.text = router.dataStore?.data?.userAddress
     }
     
@@ -62,7 +63,6 @@ extension CSMainViewController {
         // Указываем ссылку на Interactor для View Controller
         self.interactor = interactor
         
-        //router = CSMainRouter()
         router.dataStore = CSDataStore()
     }
 }
