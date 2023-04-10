@@ -10,6 +10,7 @@ import Foundation
 // swiftlint:disable trailing_whitespace
 protocol CSBusinessLogic {
     func fetchUser(_ request: CSModels.UserAuth.Request)
+    var presenter: CSPresentetionLogic? { get set }
 }
 
 final class CSInteractor: CSBusinessLogic {
@@ -27,7 +28,7 @@ final class CSInteractor: CSBusinessLogic {
             
             guard let presenter = self.presenter, let response = response else { return }
             
-            // Вызываем метод логики презентации у Presentor'а
+            // Вызываем метод логики презентации у Presenter
             presenter.presentUser(response)
         }
     }

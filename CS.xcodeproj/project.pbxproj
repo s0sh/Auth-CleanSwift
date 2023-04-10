@@ -32,6 +32,8 @@
 		B54F96A729E2A28000DC1223 /* CSMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96A629E2A28000DC1223 /* CSMainInteractor.swift */; };
 		B54F96A929E2A30700DC1223 /* CSMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96A829E2A30700DC1223 /* CSMainPresenter.swift */; };
 		B54F96AD29E2AB0B00DC1223 /* CSMainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F96AC29E2AB0B00DC1223 /* CSMainRouter.swift */; };
+		B5A9B9EC29E419CD00CB99B1 /* MainControllerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9B9EB29E419CD00CB99B1 /* MainControllerConfigurator.swift */; };
+		B5A9B9EE29E41B2300CB99B1 /* AuthControllerConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9B9ED29E41B2300CB99B1 /* AuthControllerConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		B54F96A629E2A28000DC1223 /* CSMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSMainInteractor.swift; sourceTree = "<group>"; };
 		B54F96A829E2A30700DC1223 /* CSMainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSMainPresenter.swift; sourceTree = "<group>"; };
 		B54F96AC29E2AB0B00DC1223 /* CSMainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSMainRouter.swift; sourceTree = "<group>"; };
+		B5A9B9EB29E419CD00CB99B1 /* MainControllerConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainControllerConfigurator.swift; sourceTree = "<group>"; };
+		B5A9B9ED29E41B2300CB99B1 /* AuthControllerConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthControllerConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 				B54F968529E1810900DC1223 /* CSWorker.swift */,
 				B54F968729E1813600DC1223 /* CSModels.swift */,
 				B54F968C29E191DE00DC1223 /* CSDataStore.swift */,
+				B5A9B9ED29E41B2300CB99B1 /* AuthControllerConfigurator.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 				B54F96A629E2A28000DC1223 /* CSMainInteractor.swift */,
 				B54F96A829E2A30700DC1223 /* CSMainPresenter.swift */,
 				B54F96AC29E2AB0B00DC1223 /* CSMainRouter.swift */,
+				B5A9B9EB29E419CD00CB99B1 /* MainControllerConfigurator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -293,8 +299,10 @@
 				B54F969629E2740900DC1223 /* CSTextField.swift in Sources */,
 				B54F966929E17B2700DC1223 /* AppDelegate.swift in Sources */,
 				B54F969C29E2774C00DC1223 /* CSBaseButton.swift in Sources */,
+				B5A9B9EC29E419CD00CB99B1 /* MainControllerConfigurator.swift in Sources */,
 				B54F969229E271E800DC1223 /* CSAuthorizationBlock.swift in Sources */,
 				B54F969829E2743200DC1223 /* Resources.swift in Sources */,
+				B5A9B9EE29E41B2300CB99B1 /* AuthControllerConfigurator.swift in Sources */,
 				B54F96A929E2A30700DC1223 /* CSMainPresenter.swift in Sources */,
 				B54F96A729E2A28000DC1223 /* CSMainInteractor.swift in Sources */,
 				B54F96AD29E2AB0B00DC1223 /* CSMainRouter.swift in Sources */,
@@ -454,16 +462,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9T2WUXM66D;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CS/AppLayer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CS;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,6 +481,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Roman.CS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -485,16 +496,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9T2WUXM66D;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CS/AppLayer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CS;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,6 +515,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Roman.CS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

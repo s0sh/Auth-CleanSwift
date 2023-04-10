@@ -25,7 +25,7 @@ final class CSRouter: CSRoutingLogic, CSDataPassingProtocol {
     
     func routeToNext() {
         guard let data = dataStore, var destination = destinationController else { return }
-        
+        /// Нв случай, если нужно передать данные в другой контроллер
         passData(data, destinationController: &destination)
         
         guard let viewController = controller else { return }
@@ -37,6 +37,6 @@ final class CSRouter: CSRoutingLogic, CSDataPassingProtocol {
     }
     
     private func passData(_ source: CSDataStore, destinationController: inout CSMainViewController) {
-        destinationController.router.dataStore = CSDataStore(data: source.data)
+        destinationController.router?.dataStore = CSDataStore(data: source.data)
     }
 }

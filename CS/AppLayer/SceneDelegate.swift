@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         
-        let controller = CSViewController()
+        let controller = AuthControllerConfigurator.build()
         let navigation = UINavigationController()
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
@@ -24,6 +24,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigation.viewControllers = [controller]
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
-        
     }
 }

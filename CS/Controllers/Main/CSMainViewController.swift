@@ -24,7 +24,7 @@ final class CSMainViewController: BaseController {
     }()
     
     var interactor: CSMainInteractor?
-    let router = CSMainRouter()
+    var router: CSMainRoutingLogic?
 }
 
 extension CSMainViewController {
@@ -46,27 +46,15 @@ extension CSMainViewController {
     override func configureViews() {
         super.configureViews()
         /// for exampple
-        messageLabel.text = router.dataStore?.data?.userAddress
+        messageLabel.text = router?.dataStore?.data?.userAddress
     }
     
     override func setupComponents() {
         super.setupComponents()
-        
-        // Создаем компоненты VIP цикла
-        let interactor = CSMainInteractor()
-        let presenter = CSMainPresenter()
-        
-        // Связываем созданные компоненты
-        interactor.presenter = presenter
-        presenter.viewController = self
-        
-        // Указываем ссылку на Interactor для View Controller
-        self.interactor = interactor
-        
-        router.dataStore = CSDataStore()
     }
 }
 
 extension CSMainViewController: CSMainDisplayLogic {
+    /// MVP цикл
     func displayData(_ viewModel: CSDataStore) { }
 }

@@ -14,8 +14,8 @@ protocol CSDisplayLogic: AnyObject {
 
 final class CSViewController: BaseController {
     private var authBlock = CSAuthorizationBlock()
-    private var interactor: CSBusinessLogic?
-    private var router: CSRoutingLogic?
+    var interactor: CSBusinessLogic?
+    var router: CSRoutingLogic?
 }
 
 extension CSViewController {
@@ -56,8 +56,7 @@ extension CSViewController {
         router = CSRouter()
         router?.controller = self
         
-        let destinationController = CSMainViewController()
-        router?.destinationController = destinationController
+        router?.destinationController = MainControllerConfigurator.build()
         
         // Указываем ссылку на Interactor для View Controller
         self.interactor = interactor
