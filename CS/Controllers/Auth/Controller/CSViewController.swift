@@ -38,7 +38,7 @@ extension CSViewController {
         super.configureViews()
         authBlock.buttonPressedCallback = { [weak self] (name, passsword) in
             guard let self = self, let interactor = self.interactor else { return }
-            interactor.fetchUser(CSModels.UserAuth.Request(userName: name, userPassword: passsword))
+            interactor.authUser(CSModels.UserAuth.Request(userName: name, userPassword: passsword))
         }
     }
     
