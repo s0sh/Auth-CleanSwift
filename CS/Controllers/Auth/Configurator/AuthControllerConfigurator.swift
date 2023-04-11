@@ -17,9 +17,11 @@ struct AuthControllerConfigurator {
         router.destinationController = MainControllerConfigurator.build()
         
         let controller = CSViewController()
+        controller.router = router
         presenter.viewController = controller
         interactor.presenter = presenter
-        
+        controller.interactor = interactor
+        router.controller = controller
         return controller
     }
 }

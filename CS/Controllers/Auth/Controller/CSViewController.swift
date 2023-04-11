@@ -42,25 +42,6 @@ extension CSViewController {
         }
     }
     
-    override func setupComponents() {
-        super.setupComponents()
-        
-        // Создаем компоненты VIP цикла
-        let interactor = CSInteractor()
-        let presenter = CSPresenter()
-        
-        // Связываем созданные компоненты
-        interactor.presenter = presenter
-        presenter.viewController = self
-        
-        router = CSRouter()
-        router?.controller = self
-        
-        router?.destinationController = MainControllerConfigurator.build()
-        
-        // Указываем ссылку на Interactor для View Controller
-        self.interactor = interactor
-    }
 }
 
 extension CSViewController: CSDisplayLogic {
