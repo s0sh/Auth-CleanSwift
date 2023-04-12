@@ -13,9 +13,24 @@ protocol CSDisplayLogic: AnyObject {
 }
 
 final class CSViewController: BaseController {
-    private var authBlock = CSAuthorizationBlock()
+    
+    private lazy var authBlock: CSAuthorizationBlock = {
+        let block = CSAuthorizationBlock()
+        block.buttonPressedCallback = { [weak self] (name, passsword) in
+            guard let self = self, let interactor = self.interactor else { return }
+            interactor.authUser(UserEntities.UserAuth.Request(userName: name, userPassword: passsword))
+        }
+        return block
+    }()
+    
     var interactor: CSBusinessLogic?
     var router: CSRoutingLogic?
+    
+    convenience init(interactor: CSBusinessLogic, router: CSRoutingLogic) {
+        self.init(nibName: nil, bundle: nil)
+        self.interactor = interactor
+        self.router = router
+    }
 }
 
 extension CSViewController {
@@ -36,10 +51,7 @@ extension CSViewController {
     
     override func configureViews() {
         super.configureViews()
-        authBlock.buttonPressedCallback = { [weak self] (name, passsword) in
-            guard let self = self, let interactor = self.interactor else { return }
-            interactor.authUser(UserEntities.UserAuth.Request(userName: name, userPassword: passsword))
-        }
+        
     }
 }
 

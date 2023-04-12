@@ -13,6 +13,7 @@ protocol CSBusinessLogic {
     var presenter: CSPresentetionLogic? { get set }
 }
 
+// MARK: - INTERACTOR
 final class UserAuthUseCase: CSBusinessLogic {
     
     var presenter: CSPresentetionLogic?
