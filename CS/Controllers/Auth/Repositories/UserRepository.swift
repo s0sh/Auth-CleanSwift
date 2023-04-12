@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CSWorkers {
+enum UserRepository {
     static let networkWorker = WorkersFabric.getWorker(.network)
     static let databaseWorker = WorkersFabric.getWorker(.localStorage)
 }

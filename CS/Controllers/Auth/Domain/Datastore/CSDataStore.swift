@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Передача данных между контроллерами
 struct CSDataStore {
     var data: UserEntities.UserAuth.ViewModel?
 }

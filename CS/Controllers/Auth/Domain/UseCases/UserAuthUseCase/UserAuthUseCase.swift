@@ -17,7 +17,7 @@ final class UserAuthUseCase: CSBusinessLogic {
     
     var presenter: CSPresentetionLogic?
     
-    private let worker = CSWorkers.networkWorker
+    private let worker = UserRepository.networkWorker
     
     func authUser(_ request: UserEntities.UserAuth.Request) {
         
