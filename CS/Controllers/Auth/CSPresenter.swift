@@ -9,7 +9,7 @@ import Foundation
 
 // swiftlint:disable trailing_whitespace
 protocol CSPresentetionLogic: AnyObject {
-    func presentUser(_ response: CSModels.UserAuth.Response)
+    func presentUser(_ response: UserEntities.UserAuth.Response)
     var viewController: CSDisplayLogic? { get set }
 }
 
@@ -17,12 +17,12 @@ final class CSPresenter: CSPresentetionLogic {
     
     weak var viewController: CSDisplayLogic?
     
-    func presentUser(_ response: CSModels.UserAuth.Response) {
+    func presentUser(_ response: UserEntities.UserAuth.Response) {
         // Для примера отформатируем номер телефона
         let formattedPhone = response.userPhone.replacingOccurrences(of: " ", with: "-")
         
         // Создаем экземляр ViewModel для отправки в View Controller
-        let viewModel = CSModels.UserAuth.ViewModel(userPhone: formattedPhone,
+        let viewModel = UserEntities.UserAuth.ViewModel(userPhone: formattedPhone,
                                                     userEmail: response.userEmail,
                                                     userAddress: response.userAddress)
         

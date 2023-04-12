@@ -9,17 +9,17 @@ import Foundation
 
 // swiftlint:disable trailing_whitespace
 protocol CSBusinessLogic {
-    func authUser(_ request: CSModels.UserAuth.Request)
+    func authUser(_ request: UserEntities.UserAuth.Request)
     var presenter: CSPresentetionLogic? { get set }
 }
 
-final class CSInteractor: CSBusinessLogic {
+final class UserAuthUseCase: CSBusinessLogic {
     
     var presenter: CSPresentetionLogic?
     
     private let worker = CSWorkers.networkWorker
     
-    func authUser(_ request: CSModels.UserAuth.Request) {
+    func authUser(_ request: UserEntities.UserAuth.Request) {
         
         worker.execute(request: request) { response, error in
             

@@ -8,7 +8,7 @@
 import Foundation
 
 // swiftlint:disable nesting
-enum CSModels {
+enum UserEntities {
     enum UserAuth {
         /// Запрос к Interactor из View Controller (TextFields данные или что-то другое)
         ///  То, что уходит параметрами в сетевой запрос

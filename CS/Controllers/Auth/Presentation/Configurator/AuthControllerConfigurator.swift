@@ -10,7 +10,7 @@ import UIKit
 struct AuthControllerConfigurator {
     static func build() -> CSViewController {
         
-        let interactor = CSInteractor()
+        let interactor = UserAuthUseCase()
         let presenter = CSPresenter()
         let router = CSRouter()
         

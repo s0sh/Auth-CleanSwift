@@ -1,21 +1,20 @@
 //
-//  NetworkWorker.swift
+//  DatabaseWorker.swift
 //  CS
 //
-//  Created by Roman Bigun on 08.04.2023.
+//  Created by Roman Bigun on 11.04.2023.
 //
 
 import Foundation
 
-struct AuthNetworkWorker: Worker {
-    
-    func execute(request: CSModels.UserAuth.Request,
-                     completion: @escaping (CSModels.UserAuth.Response?, Error?) -> Void) {
+struct AuthDatabaseWorker: Worker {
+    func execute(request: UserEntities.UserAuth.Request,
+                 completion: @escaping (UserEntities.UserAuth.Response?, Error?) -> Void) {
         let userPhone = "+38(099) 111 22 33"
         let userEmail = "dot@dot.com"
         let address = "Ukrine, Kharkiv, Sadovy Passage 19/33"
         
-        let response = CSModels.UserAuth.Response(userPhone: userPhone,
+        let response = UserEntities.UserAuth.Response(userPhone: userPhone,
                                                   userEmail: userEmail,
                                                   userAddress: address)
         completion(response, nil)
