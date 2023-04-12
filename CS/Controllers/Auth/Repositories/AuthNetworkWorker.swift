@@ -9,7 +9,7 @@ import Foundation
 
 struct AuthNetworkWorker: Worker {
     
-    func execute(request: UserEntities.UserAuth.Request,
+    func execute(parameters: AnyHashable,
                      completion: @escaping (UserEntities.UserAuth.Response?, Error?) -> Void) {
         let userPhone = "+38(099) 111 22 33"
         let userEmail = "dot@dot.com"

@@ -12,12 +12,12 @@ enum UserEntities {
     enum UserAuth {
         /// Запрос к Interactor из View Controller (TextFields данные или что-то другое)
         ///  То, что уходит параметрами в сетевой запрос
-        struct Request: Encodable {
+        struct Request: Encodable, Hashable {
             let userName: String
             let userPassword: String
         }
         /// Пришел ответ от сервера, передаем в Presenter и форматируем там данные если нужно
-        struct Response: Decodable {
+        struct Response: Decodable, Hashable {
             let userPhone: String
             let userEmail: String
             let userAddress: String

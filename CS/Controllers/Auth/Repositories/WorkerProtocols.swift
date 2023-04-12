@@ -8,6 +8,6 @@
 import Foundation
 
 protocol Worker {
-    func execute(request: UserEntities.UserAuth.Request,
+    func execute(parameters: AnyHashable,
                      completion: @escaping (UserEntities.UserAuth.Response?, Error?) -> Void)
 }

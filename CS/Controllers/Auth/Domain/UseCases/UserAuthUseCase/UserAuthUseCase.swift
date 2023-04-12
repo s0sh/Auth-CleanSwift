@@ -21,7 +21,7 @@ final class UserAuthUseCase: CSBusinessLogic {
     
     func authUser(_ request: UserEntities.UserAuth.Request) {
         
-        worker.execute(request: request) { response, error in
+        worker.execute(parameters: request) { response, error in
             
             guard error == nil else { return }
             
