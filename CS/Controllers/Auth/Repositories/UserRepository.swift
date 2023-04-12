@@ -8,6 +8,6 @@
 import Foundation
 
 enum UserRepository {
-    static let networkWorker = WorkersFabric.getWorker(.network)
-    static let databaseWorker = WorkersFabric.getWorker(.localStorage)
+    static let network = WorkersFabric.getWorker(.network)
+    static let database = WorkersFabric.getWorker(.localStorage)
 }
