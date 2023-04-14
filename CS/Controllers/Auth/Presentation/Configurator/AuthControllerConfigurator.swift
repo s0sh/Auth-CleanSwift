@@ -14,14 +14,18 @@ struct AuthControllerConfigurator {
         let presenter = CSPresenter()
         let router = CSRouter()
         
-        router.destinationController = MainControllerConfigurator.build()
         
-        let controller = CSViewController()
-        controller.router = router
-        presenter.viewController = controller
+        
+        let sourceController = CSViewController()
+        sourceController.router = router
+        
+        presenter.viewController = sourceController
         interactor.presenter = presenter
-        controller.interactor = interactor
-        router.controller = controller
-        return controller
+        sourceController.interactor = interactor
+        
+        router.destinationController = MainControllerConfigurator.build()
+        router.sourceController = sourceController
+        
+        return sourceController
     }
 }

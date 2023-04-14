@@ -11,24 +11,26 @@ import UIKit
 protocol CSRoutingLogic {
     func routeToNext()
     var dataStore: CSDataStore? { get set }
-    var controller: CSViewController? { get set }
-    var destinationController: CSMainViewController? { get set }
+    var sourceController: RoutableController? { get set }
+    var destinationController: RoutableController? { get set }
 }
+
+protocol RoutableController {}
 
 final class CSRouter: CSRoutingLogic, CSDataPassingProtocol {
    
     var dataStore: CSDataStore?
     
-    weak var controller: CSViewController?
+    var sourceController: RoutableController?
     
-    var destinationController: CSMainViewController?
+    var destinationController: RoutableController?
     
     func routeToNext() {
-        guard let data = dataStore, var destination = destinationController else { return }
+        guard let data = dataStore, var destination = destinationController as? CSMainViewController else { return }
         /// Нв случай, если нужно передать данные в другой контроллер
         passData(data, destinationController: &destination)
         
-        guard let viewController = controller else { return }
+        guard let viewController = sourceController as? CSViewController else { return }
         navigateTo(viewController, destination: destination)
     }
     

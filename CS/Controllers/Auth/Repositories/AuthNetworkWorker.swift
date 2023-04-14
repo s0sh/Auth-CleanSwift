@@ -16,7 +16,7 @@ struct AuthNetworkWorker: Worker {
         let address = "Ukrine, Kharkiv, Sadovy Passage 19/33"
         
         /// Тут формируем данные для интерактора, что-бы в презентер уже ушли нормализованые
-        /// данные для отображения во вью
+        /// данные для отображения во вью. Интерактор не формирует данные - только берет\отдает
         let response = UserEntities.UserAuth.Response(userPhone: userPhone,
                                                   userEmail: userEmail,
                                                   userAddress: address)

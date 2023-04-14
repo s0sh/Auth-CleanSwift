@@ -13,7 +13,7 @@ protocol CSMainDisplayLogic: AnyObject {
     func displayData(_ viewModel: CSDataStore)
 }
 
-final class CSMainViewController: BaseController {
+final class CSMainViewController: BaseController, RoutableController {
    
     private var messageLabel: UILabel = {
        let label = UILabel()

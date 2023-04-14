@@ -12,7 +12,7 @@ protocol CSDisplayLogic: AnyObject {
     func displayUser(_ data: CSDataStore)
 }
 
-final class CSViewController: BaseController {
+final class CSViewController: BaseController, RoutableController {
     
     private lazy var authBlock: CSAuthorizationBlock = {
         let block = CSAuthorizationBlock()
