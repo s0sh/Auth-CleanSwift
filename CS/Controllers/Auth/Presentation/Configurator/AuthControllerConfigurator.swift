@@ -23,8 +23,8 @@ struct AuthControllerConfigurator {
         interactor.presenter = presenter
         sourceController.interactor = interactor
         
-        router.destinationController = MainControllerConfigurator.build()
-        router.sourceController = sourceController
+        router.destinationController = MainControllerConfigurator.build() as! any RoutableController
+        router.sourceController = sourceController as! any RoutableController
         
         return sourceController
     }
