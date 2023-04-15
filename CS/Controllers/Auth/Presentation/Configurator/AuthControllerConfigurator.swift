@@ -14,8 +14,6 @@ struct AuthControllerConfigurator {
         let presenter = CSPresenter()
         let router = CSRouter()
         
-        
-        
         let sourceController = CSViewController()
         sourceController.router = router
         

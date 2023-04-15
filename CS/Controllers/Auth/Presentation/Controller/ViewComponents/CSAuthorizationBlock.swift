@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import Combine
 
 // swiftlint:disable trailing_whitespace
 
 final class CSAuthorizationBlock: BaseView {
     
     var buttonPressedCallback: ((String, String) -> Void)?
+    var viewModel = AuthBlockViewModel()
+    var cancelable = Set<AnyCancellable>()
+    
     
     private let userNameTextField: CSTextField = {
         let textField = CSTextField(placeholder: R.Strings.name, isActive: true)
@@ -30,6 +34,7 @@ final class CSAuthorizationBlock: BaseView {
     private lazy var sendButton: CSBaseButton = {
         let button = CSBaseButton(with: .dark, title: R.Strings.send)
         button.addTarget(target: self, action: #selector(buttonPressed))
+        button.isEnabled = false
         return button
     }()
     
@@ -42,7 +47,47 @@ final class CSAuthorizationBlock: BaseView {
     }()
     
     @objc func buttonPressed() {
-        buttonPressedCallback?(userNameTextField.text, userPasswordTextField.text)
+        viewModel.submitLogin { [weak self] allGood in
+            guard let self = self else { return }
+            if allGood {
+                self.buttonPressedCallback?(self.userNameTextField.text,
+                                            self.userPasswordTextField.text)
+                return
+            }
+        }
+        
+    }
+    
+    func bindViewModel() {
+        NotificationCenter.default
+            .publisher(for: UITextField.textDidChangeNotification, object: userNameTextField)
+            .map { ($0.object as! UITextField).text ?? "" }
+            .assign(to: \.email, on: viewModel)
+            .store(in: &cancelable)
+        NotificationCenter.default
+            .publisher(for: UITextField.textDidChangeNotification, object: userPasswordTextField)
+            .map { ($0.object as! UITextField).text ?? "" }
+            .assign(to: \.password, on: viewModel)
+            .store(in: &cancelable)
+        
+        viewModel.isLoginEnabled
+            .assign(to: \.isEnabled, on: sendButton)
+            .store(in: &cancelable)
+        
+        viewModel.$state
+            .sink { [weak self] state in
+                guard let self = self else { return }
+                switch state {
+                case .loading:
+                    self.sendButton.isEnabled = false
+                case .failed:
+                    self.sendButton.isEnabled = true
+                case .success:
+                    self.sendButton.isEnabled = false
+                case .none:
+                    break
+                }
+            }.store(in: &cancelable)
     }
 }
 
@@ -50,6 +95,7 @@ extension CSAuthorizationBlock {
     override func addViews() {
         super.addViews()
         addView(stackView)
+        
     }
     
     override func layoutSubviews() {
@@ -71,6 +117,8 @@ extension CSAuthorizationBlock {
         
         userNameTextField.delegate = self
         userPasswordTextField.delegate = self
+        
+        bindViewModel()
     }
 }
 

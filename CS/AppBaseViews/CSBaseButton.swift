@@ -25,6 +25,21 @@ final class CSBaseButton: BaseView {
         return button
     }()
     
+    var isEnabled: Bool = false {
+        willSet(newValue) {
+            DispatchQueue.main.async {
+                self.button.isEnabled = newValue
+                if newValue == true {
+                    self.button.backgroundColor = R.Colors.mainAppDark
+                    self.button.titleLabel?.textColor = .white
+                } else {
+                    self.button.backgroundColor = R.Colors.mainAppGray
+                    self.button.titleLabel?.textColor = .black
+                }
+            }
+        }
+    }
+    
     private var title: String?
     private var type: ButtonType = .regular
     

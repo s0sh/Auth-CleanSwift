@@ -3,4 +3,85 @@
    uuid = "1633C15D-AD8C-4611-B538-3577044775D7"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A2E8E1BC-6B9D-480F-A158-A9F36D0A686C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CS/Controllers/Auth/Presentation/Controller/CSViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "authBlock"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A2E8E1BC-6B9D-480F-A158-A9F36D0A686C - 97c0b226f8226d91"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String, Swift.String) -&gt; () in closure #1 () -&gt; CS.CSAuthorizationBlock in CS.CSViewController.authBlock.getter : CS.CSAuthorizationBlock"
+                  moduleName = "CS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/romanbigun/Documents/Auth-CleanSwift/CS/Controllers/Auth/Presentation/Controller/CSViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "178">
+               </Location>
+               <Location
+                  uuid = "A2E8E1BC-6B9D-480F-A158-A9F36D0A686C - 97c0b226f8226d91"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String, Swift.String) -&gt; () in closure #1 () -&gt; CS.CSAuthorizationBlock in CS.CSViewController.authBlock.getter : CS.CSAuthorizationBlock"
+                  moduleName = "CS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/romanbigun/Documents/Auth-CleanSwift/CS/Controllers/Auth/Presentation/Controller/CSViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "253">
+               </Location>
+               <Location
+                  uuid = "A2E8E1BC-6B9D-480F-A158-A9F36D0A686C - 97c0b226f8226d91"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String, Swift.String) -&gt; () in closure #1 () -&gt; CS.CSAuthorizationBlock in CS.CSViewController.authBlock.getter : CS.CSAuthorizationBlock"
+                  moduleName = "CS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/romanbigun/Documents/Auth-CleanSwift/CS/Controllers/Auth/Presentation/Controller/CSViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "276">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC3EEF09-8EC3-4D14-8EF9-53550150B4D7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CS/Controllers/Auth/Presentation/Controller/ViewComponents/AuthBlockViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "isValidPasswordPublisher"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
