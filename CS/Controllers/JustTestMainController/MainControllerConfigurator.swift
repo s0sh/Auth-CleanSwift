@@ -13,6 +13,7 @@ struct MainControllerConfigurator {
         let interactor = CSMainInteractor()
         let presenter = CSMainPresenter()
         let router = CSMainRouter()
+        
         interactor.presenter = presenter
         controller.interactor = interactor
         controller.router = router

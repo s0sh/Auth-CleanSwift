@@ -212,13 +212,13 @@
 		B54F96A129E27C1300DC1223 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B54F96A329E2A1E900DC1223 /* Main */,
+				B54F96A329E2A1E900DC1223 /* JustTestMainController */,
 				B54F967C29E17B3700DC1223 /* Auth */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		B54F96A329E2A1E900DC1223 /* Main */ = {
+		B54F96A329E2A1E900DC1223 /* JustTestMainController */ = {
 			isa = PBXGroup;
 			children = (
 				B54F96A429E2A20700DC1223 /* CSMainViewController.swift */,
@@ -227,7 +227,7 @@
 				B54F96AC29E2AB0B00DC1223 /* CSMainRouter.swift */,
 				B5A9B9EB29E419CD00CB99B1 /* MainControllerConfigurator.swift */,
 			);
-			path = Main;
+			path = JustTestMainController;
 			sourceTree = "<group>";
 		};
 		B585C7EB29E678FD004CC59E /* Domain */ = {

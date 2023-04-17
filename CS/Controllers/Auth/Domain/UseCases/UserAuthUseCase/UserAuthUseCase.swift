@@ -8,7 +8,7 @@
 import Foundation
 
 // swiftlint:disable trailing_whitespace
-protocol CSBusinessLogic {
+protocol CSBusinessLogic: AnyObject {
     func authUser(_ request: UserEntities.UserAuth.Request)
 }
 

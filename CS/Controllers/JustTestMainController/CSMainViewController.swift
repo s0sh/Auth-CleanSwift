@@ -20,6 +20,8 @@ final class CSMainViewController: BaseController, RoutableController {
         label.font = R.Fonts.helveticaRegular(with: 18)
         label.textColor = .red
         label.backgroundColor = .yellow
+        label.numberOfLines = 0
+        label.textAlignment = .center
         return label
     }()
     
@@ -39,7 +41,7 @@ extension CSMainViewController {
             messageLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 250),
             messageLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             messageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            messageLabel.heightAnchor.constraint(equalToConstant: 50)
+            messageLabel.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     
