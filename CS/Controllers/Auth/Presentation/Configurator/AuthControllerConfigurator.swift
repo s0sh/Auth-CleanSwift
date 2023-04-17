@@ -11,17 +11,16 @@ import UIKit
 struct AuthControllerConfigurator {
     
     static func build() -> CSViewController {
-        
-        let interactor = UserAuthUseCase()
+
         let presenter = CSPresenter()
         let router = CSRouter()
+        let interactor = UserAuthUseCase(presenter: presenter)
         
         let sourceController = CSViewController()
         sourceController.router = router
-        
+        sourceController.presenter = presenter
         presenter.viewController = sourceController
-        interactor.presenter = presenter
-        sourceController.interactor = interactor
+        presenter.interactor = interactor
         
         router.destinationController = (MainControllerConfigurator.build() as? any RoutableController)
         router.sourceController = (sourceController as? any RoutableController)

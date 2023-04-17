@@ -10,12 +10,18 @@ import Foundation
 // swiftlint:disable trailing_whitespace
 protocol CSPresentetionLogic: AnyObject {
     func presentUser(_ response: UserEntities.UserAuth.Response)
+    func authUserCalled(with request: UserEntities.UserAuth.Request)
     var viewController: CSDisplayLogic? { get set }
 }
 
 final class CSPresenter: CSPresentetionLogic {
     
     weak var viewController: CSDisplayLogic?
+    var interactor: CSBusinessLogic?
+    
+    func authUserCalled(with request: UserEntities.UserAuth.Request) {
+        interactor?.authUser(request)
+    }
     
     func presentUser(_ response: UserEntities.UserAuth.Response) {
         // Для примера отформатируем номер телефона

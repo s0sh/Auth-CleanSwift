@@ -10,15 +10,18 @@ import Foundation
 // swiftlint:disable trailing_whitespace
 protocol CSBusinessLogic {
     func authUser(_ request: UserEntities.UserAuth.Request)
-    var presenter: CSPresentetionLogic? { get set }
 }
 
 // MARK: - INTERACTOR
 final class UserAuthUseCase: CSBusinessLogic {
     
-    var presenter: CSPresentetionLogic?
+    private var presenter: CSPresentetionLogic?
     
     private let worker = UserRepository.network
+    
+    init(presenter: CSPresentetionLogic){
+        self.presenter = presenter
+    }
     
     func authUser(_ request: UserEntities.UserAuth.Request) {
         

@@ -17,18 +17,19 @@ final class CSViewController: BaseController, RoutableController {
     private lazy var authBlock: CSAuthorizationBlock = {
         let block = CSAuthorizationBlock()
         block.buttonPressedCallback = { [weak self] (name, passsword) in
-            guard let self = self, let interactor = self.interactor else { return }
-            interactor.authUser(UserEntities.UserAuth.Request(userName: name, userPassword: passsword))
+            guard let self = self, let presenter = self.presenter else { return }
+            presenter.authUserCalled(with: UserEntities.UserAuth.Request(userName: name, userPassword: passsword))
         }
         return block
     }()
     
-    var interactor: CSBusinessLogic?
+    
     var router: CSRoutingLogic?
+    
+    var presenter: CSPresentetionLogic?
     
     convenience init(interactor: CSBusinessLogic, router: CSRoutingLogic) {
         self.init(nibName: nil, bundle: nil)
-        self.interactor = interactor
         self.router = router
     }
 }
