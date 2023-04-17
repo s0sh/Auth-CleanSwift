@@ -13,7 +13,6 @@ struct AuthDatabaseWorker: Worker {
         let userPhone = "+38(099) 111 22 33"
         let userEmail = "dot@dot.com"
         let address = "Ukrine, Kharkiv, Sadovy Passage 19/33"
-        
         let response = UserEntities.UserAuth.Response(userPhone: userPhone,
                                                   userEmail: userEmail,
                                                   userAddress: address)

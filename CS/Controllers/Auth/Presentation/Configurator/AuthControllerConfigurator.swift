@@ -7,14 +7,14 @@
 
 import UIKit
 
+// swiftlint:disable trailing_whitespace
 struct AuthControllerConfigurator {
+    
     static func build() -> CSViewController {
         
         let interactor = UserAuthUseCase()
         let presenter = CSPresenter()
         let router = CSRouter()
-        
-        
         
         let sourceController = CSViewController()
         sourceController.router = router
