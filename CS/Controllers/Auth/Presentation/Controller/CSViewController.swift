@@ -14,6 +14,9 @@ protocol CSDisplayLogic: AnyObject {
 
 final class CSViewController: BaseController, RoutableController {
     
+    var router: CSRoutingLogic?
+    var presenter: CSPresentetionLogic?
+    
     private lazy var authBlock: CSAuthorizationBlock = {
         let block = CSAuthorizationBlock()
         block.buttonPressedCallback = { [weak self] (name, passsword) in
@@ -22,16 +25,6 @@ final class CSViewController: BaseController, RoutableController {
         }
         return block
     }()
-    
-    
-    var router: CSRoutingLogic?
-    
-    var presenter: CSPresentetionLogic?
-    
-    convenience init(interactor: CSBusinessLogic, router: CSRoutingLogic) {
-        self.init(nibName: nil, bundle: nil)
-        self.router = router
-    }
 }
 
 extension CSViewController {
@@ -48,11 +41,6 @@ extension CSViewController {
             authBlock.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             authBlock.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
         ])
-    }
-    
-    override func configureViews() {
-        super.configureViews()
-        
     }
 }
 
