@@ -22,8 +22,8 @@ struct AuthControllerConfigurator {
         presenter.viewController = sourceController
         presenter.interactor = interactor
         
-        router.destinationController = (MainControllerConfigurator.build())
-        router.sourceController = (sourceController)
+        router.destinationController = MainControllerConfigurator.build()
+        router.sourceController = sourceController
         
         return sourceController
     }
