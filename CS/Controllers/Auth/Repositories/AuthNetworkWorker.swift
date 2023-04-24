@@ -8,7 +8,7 @@
 import Foundation
 
 struct AuthNetworkWorker: Worker {
-    func execute(parameters: AnyHashable,
+    func execute(with action: WorkerAction, parameters: AnyHashable,
                  completion: @escaping (UserEntities.UserAuth.Response?,
                  Error?) -> Void) {
         let userPhone = "+38(099) 111 22 33"

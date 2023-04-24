@@ -7,6 +7,7 @@
 
 import UIKit
 
+// swiftlint:disable trailing_whitespace
 struct MainControllerConfigurator {
     static func build() -> CSMainViewController {
         let controller = CSMainViewController()

@@ -19,13 +19,13 @@ final class UserAuthUseCase: CSBusinessLogic {
     
     private let worker = UserRepository.network
     
-    init(presenter: CSPresentetionLogic){
+    init(presenter: CSPresentetionLogic) {
         self.presenter = presenter
     }
     
     func authUser(_ request: UserEntities.UserAuth.Request) {
         
-        worker.execute(parameters: request) { response, error in
+        worker.execute(with: .authentificate, parameters: request) { response, error in
             
             guard error == nil else { return }
             

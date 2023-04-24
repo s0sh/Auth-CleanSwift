@@ -19,8 +19,10 @@ final class CSViewController: BaseController, RoutableController {
     
     private lazy var authBlock: CSAuthorizationBlock = {
         let block = CSAuthorizationBlock()
-        block.buttonPressedCallback = { [weak self] (name, passsword) in
-            guard let self = self, let presenter = self.presenter else { return }
+        // 'unowned' here due to block deallocats along with this controller
+        // and 'self' is needed to be strong here
+        block.buttonPressedCallback = { [unowned self] (name, passsword) in
+            guard let presenter = self.presenter else { return }
             presenter.authUserCalled(with: UserEntities.UserAuth.Request(userName: name, userPassword: passsword))
         }
         return block
